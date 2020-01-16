@@ -1,0 +1,58 @@
+@font-face {
+	font-family: starNormal;
+	src: url(../font/Starjedi.ttf);
+}
+
+html {
+	overflow-y: scroll;
+}
+
+body {
+	font-family: starNormal;
+	background-image: url("../img/poster2.jpg");
+	background-size: cover;
+	color: white;
+}
+
+#board {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+#distance {
+	padding: 1%;
+}
+
+#distance, #calculator, #clear {
+	font-family: starNormal;
+	background-color: rgba(0, 0, 255, 0);
+	color: white;
+	border: 2px solid white;
+}
+
+#calculator:hover {
+	cursor: pointer;
+}
+
+#input {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#title a {
+	font-family: starNormal;
+	color: white;
+	text-decoration: none;
+	font-size: 90%;
+}
+
+#clear a {
+	text-decoration: none;
+	color: white;
+}
+
+#stats {
+	margin-top: 3%;
+	padding: 1%;
+}
