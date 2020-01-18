@@ -40,11 +40,15 @@ Added original poster as a background, a div board, divided into 4 sections
 
 #2. Connect the app with the API
 
-Access the url https://swapi.co/api/starships/schema to access JSON schema for the starships
+Access the url https://swapi.co/api/starships/ to access JSON data for the starships
+
+Send JSON data to an specific function to print onto the screen
 
 #3. Store and access the data
 
-Store the data onto a variable
+Get JSON data and store name and MGLT (megalight) onto a variable
 
-Access the specific data and show it on the screen
+Create a new variable to do the calculation based on the input
+
+Show name and calculation onto the screen
 

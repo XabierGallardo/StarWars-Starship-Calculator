@@ -3,27 +3,34 @@ window.onload = function() {
 
 	function connectAPI() {
 
-		var distance = $("#distance").val(); // Taking value from input
+		var distance = $("#distance").val(); //Taking value from input
 
-		if(!isNaN(distance) && distance >= 0){ //Filter incorrect value
-
-			var url = "https://swapi.co/api/starships/schema"; //Store url petition in a variable
+		if(!isNaN(distance) && distance >= 0) { //Filter incorrect input
 			
-			var connection =$.ajax({ //AJAX petition to get all info from API
-								url: url,
-								type: "get",
-								dataType: "JSON",
-								contentType: "application/json",
-								success: function (data) {
-									console.table({data}); //See all info in the console
-									//$("#stats").html(names);
-								}
-							});
+			var starRequest = new XMLHttpRequest();
+			starRequest.open('GET', 'https://swapi.co/api/starships/');
+			starRequest.onload = function() { //Once the data is loaded, execute the function
+				
+				var starJSON = JSON.parse(starRequest.responseText);//Store JSON data onto the variable
+				var starships = starJSON.results;
+				showInfo(starships);//send JSON results to the especific function
+			};
+			starRequest.send();
+
+			function showInfo(starships) { //Shows data onto the screen
+				
+				for (let i = 0; i < starships.length; i++) {
+                                	var name = starships[i].name;
+					var megalights = starships[i].MGLT;
+					var calculation;
+					console.log(name + ": " + megalights);
+					//$("#stats").html("<li>" + name + megalights + "</li>");
+                                }
+			}
 
 		} else {
 			console.log("Incorrect value");
 		}
 	}	
 }
-
 
