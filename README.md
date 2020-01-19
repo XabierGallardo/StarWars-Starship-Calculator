@@ -46,9 +46,19 @@ Send JSON data to an specific function to print onto the screen
 
 #3. Store and access the data
 
-Get JSON data and store name and MGLT (megalight) onto a variable
+Get JSON data and store name, MGLT and consumables data onto a variable
 
-Create a new variable to do the calculation based on the input
+Create a new variable to do the calculation
 
-Show name and calculation onto the screen
+Calculation steps:
+
+- Need to know the total distance in hours a starship can cover 
+
+- Multiply consumables results to get hours and store on new variable 
+
+- (new variable) totalDistance = mglt * consumableHours
+
+- resupplyStops = totalDistance / inputDistance
+
+Show name and resupplyStops onto the screen
 
