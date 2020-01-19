@@ -12,11 +12,6 @@ The application will take as input a distance in mega lights (MGLT).
 The output should be a collection of all the star ships and the total amount of stops required to make the distance between the planets.
 All other application details are at your own discretion.
 
-Sample output for 1000000 input:
-Y-wing: 74
-Millennium Falcon: 9
-Rebel Transport: 11
-
 ///////////////////////////////////////////////////////////////////////////////////
 
 #DOCUMENTATION - Steps to do
@@ -25,7 +20,7 @@ Rebel Transport: 11
 
 2. Take the input from the user and connect it with the API
 
-3. Take the data from the API and show it to the user
+3. Take the data from the API, process it and show info to the user
 
 
 #1. Create a simple user interface to interact with the API
@@ -46,19 +41,17 @@ Send JSON data to an specific function to print onto the screen
 
 #3. Store and access the data
 
-Get JSON data and store name, MGLT and consumables data onto a variable
-
-Create a new variable to do the calculation
+Get JSON data and store name, MGLT and consumables data into variables
 
 Calculation steps:
 
 - Need to know the total distance in hours a starship can cover 
 
-- Multiply consumables results to get hours and store on new variable 
+- Multiply consumables results to get hours and store results on new variable 
 
-- (new variable) totalDistance = mglt * consumableHours
+- (new variable) totalDistance = mglt * hoursDistance
 
-- resupplyStops = totalDistance / inputDistance
+- calculateStops = totalDistance / inputDistance
 
-Show name and resupplyStops onto the screen
+Show name and number of stops onto the screen
 
