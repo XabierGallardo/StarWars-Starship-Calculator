@@ -15,9 +15,11 @@ body {
 }
 
 #board {
-	width: 100%;
+	width: 95%;
 	display: flex;
 	flex-direction: column;
+	padding-left: 3%; 
+	font-size: x-large;
 }
 
 #distance {
@@ -29,6 +31,7 @@ body {
 	background-color: rgba(0, 0, 255, 0);
 	color: white;
 	border: 2px solid white;
+	font-size: x-large;
 }
 
 #calculator:hover {
@@ -44,7 +47,7 @@ body {
 	font-family: starNormal;
 	color: white;
 	text-decoration: none;
-	font-size: 90%;
+	font-size: xxx-large;
 }
 
 #clear a {

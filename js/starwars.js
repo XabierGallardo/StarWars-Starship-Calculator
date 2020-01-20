@@ -35,8 +35,14 @@ window.onload = function() {
 
 					//console.log("Name: " + name + ", MGLT: " + megalights + ", consumables: " + consumables + ", total distance covered: " + totalDistance + " megalights");
 					//console.log("Number of stops: " + calculateStops);
+
+					if(inputDistance > totalDistance) {
+						printData += "<li>" + name + " / " + calculateStops + " stops" + "</li>"; //Filling list element with each loop iteration	
+					} else {
+						printData += "<li>"+name + " / " + " no stops needed" + "</li>";
+					}
 					
-					printData += "<li>"+name + " / "+calculateStops+ " stops" +"</li>"; //Filling list element with each loop iteration
+					
             	}
 
             	$("#stats").html(printData+"</ul>"); //Print all elements and end list element
