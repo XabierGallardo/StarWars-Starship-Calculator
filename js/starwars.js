@@ -4,58 +4,64 @@ window.onload = function() {
 
 	function connectAPI() {
 
-		let inputDistance = $("#distance").val(); //Taking value from input
+		const inputDistance = $("#distance").val(); //Taking value from input
 
 		if(!isNaN(inputDistance) && inputDistance >= 0) { //Filter incorrect input
 			
-			let starRequest = new XMLHttpRequest();
+			const starRequest = new XMLHttpRequest();
 			starRequest.open('GET', 'https://swapi.co/api/starships/');
+
 			starRequest.onload = function() { //Once the data is loaded, execute the function
-				
-				let starJSON = JSON.parse(starRequest.responseText);//Store JSON data onto the variable
-				let starships = starJSON.results;
+
+				const starJSON = JSON.parse(starRequest.responseText);//Store JSON data onto the variable
+				const starships = starJSON.results;
 				showInfo(starships);//send JSON results to the especific function
 			};
+
 			starRequest.send();
 
 			function showInfo(starships) { //Shows data onto the screen
 				
+				let printData = "<ul>"; //List element created
 				for (let i = 0; i < starships.length; i++) { //Iterate over all starships
 
-                	let name = starships[i].name;		
-					let megalights = starships[i].MGLT;
-					let consumables = starships[i].consumables;
+                	const name = starships[i].name;		
+					const megalights = starships[i].MGLT;
+					const consumables = starships[i].consumables;
 
-					let hoursDistance = getConsumableHours(consumables);
-					let totalDistance = hoursDistance * megalights;
-					let calculateStops = totalDistance / inputDistance;
+					const hoursDistance = getConsumableHours(consumables);
+					const totalDistance = hoursDistance * megalights;
+					const calculateStops = totalDistance / inputDistance;
 
-					console.log("Name: " + name + ", MGLT: " + megalights + ", consumables: " + consumables + ", total distance covered: " + totalDistance + " megalights");
-					console.log("Number of stops: " + calculateStops);
+					//console.log("Name: " + name + ", MGLT: " + megalights + ", consumables: " + consumables + ", total distance covered: " + totalDistance + " megalights");
+					//console.log("Number of stops: " + calculateStops);
+					
+					printData += "<li>"+name + " / "+calculateStops+ " stops" +"</li>"; //Filling list element with each loop iteration
             	}
+
+            	$("#stats").html(printData+"</ul>"); //Print all elements and end list element
 			}
 
-			function getConsumableHours(data) { //We'll receive a number and a string as a parameter
+			function getConsumableHours(data) { //Receive a number and a string as a parameter
 				
-				//First, filter days, weeks, months or years
-				if (data.includes("days") || data.includes("day")) { 
+				if (data.includes("days") || data.includes("day")) { //First, filter days, weeks, months or years
 					consumables = data.match(/\d/g);//Extract the number from the string
-					let days = consumables*24; 
+					const days = consumables*24; 
 					return days;
 				
 				} else if (data.includes("weeks") || data.includes("week")) {
 					consumables = data.match(/\d/g);
-					let weeks = consumables*24*7;
+					const weeks = consumables*24*7;
 					return weeks;
 
 				} else if (data.includes("months") || data.includes("month")){
 					consumables = data.match(/\d/g);
-					let months = consumables*24*7*30;
+					const months = consumables*24*7*30;
 					return months;
 
 				} else if (data.includes("years") || data.includes("year")) {
 					consumables = data.match(/\d/g);
-					let years = consumables*24*7*30*12; //24 hours a day * 7 days a week * 30 days a month * 12 months a year
+					const years = consumables*24*7*30*12; //24 hours a day * 7 days a week * 30 days a month * 12 months a year
 					return years;
 
 				} else {

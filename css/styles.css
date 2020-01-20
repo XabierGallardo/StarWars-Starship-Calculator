@@ -52,7 +52,6 @@ body {
 	color: white;
 }
 
-#stats {
-	margin-top: 3%;
-	padding: 1%;
+#stats li {
+	list-style: hiragana-iroha;
 }
