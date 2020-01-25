@@ -1,5 +1,5 @@
 # StarWars-Starship-Calculator
-StarWars API Starship Calculator
+StarWars API Starship Calculator using JavaScript, ES6, AJAX, JSON
 
 https://swapi.co/  
 
