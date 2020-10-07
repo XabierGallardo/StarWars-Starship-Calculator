@@ -9,7 +9,7 @@ window.onload = function() {
 		if(!isNaN(inputDistance) && inputDistance >= 0) { //Filter incorrect input
 			
 			const starRequest = new XMLHttpRequest();
-			starRequest.open('GET', 'https://swapi.co/api/starships/');
+			starRequest.open('GET', 'https://swapi.dev/api/starships/');
 
 			starRequest.onload = function() { //Once the data is loaded, execute the function
 
@@ -23,6 +23,7 @@ window.onload = function() {
 			function showInfo(starships) { //Shows data onto the screen
 				
 				let printData = "<ul>"; //List element created
+
 				for (let i = 0; i < starships.length; i++) { //Iterate over all starships
 
                 	const name = starships[i].name;		
@@ -33,16 +34,11 @@ window.onload = function() {
 					const totalDistance = hoursDistance * megalights;
 					const calculateStops = totalDistance / inputDistance;
 
-					//console.log("Name: " + name + ", MGLT: " + megalights + ", consumables: " + consumables + ", total distance covered: " + totalDistance + " megalights");
-					//console.log("Number of stops: " + calculateStops);
-
 					if(inputDistance > totalDistance) {
 						printData += "<li>" + name + " / " + calculateStops + " stops" + "</li>"; //Filling list element with each loop iteration	
 					} else {
 						printData += "<li>"+name + " / " + " no stops needed" + "</li>";
 					}
-					
-					
             	}
 
             	$("#stats").html(printData+"</ul>"); //Print all elements and end list element
@@ -80,4 +76,3 @@ window.onload = function() {
 		}
 	}	
 }
-

@@ -1,15 +1,8 @@
-@font-face {
-	font-family: starNormal;
-	src: url(../font/Starjedi.ttf);
-}
-
-html {
-	overflow-y: scroll;
-}
+@font-face { font-family: starNormal; src: url(../font/Starjedi.ttf); }
 
 body {
 	font-family: starNormal;
-	background-image: url("../img/poster2.jpg");
+	background-image: url("../img/poster3.jpg");
 	background-size: cover;
 	color: white;
 }
@@ -19,42 +12,40 @@ body {
 	display: flex;
 	flex-direction: column;
 	padding-left: 3%; 
-	font-size: x-large;
+	font-size: medium;
 }
 
-#distance {
-	padding: 1%;
-}
+#distance { width: 50%; text-align: center; }
 
-#distance, #calculator, #clear {
+#distance, #calculator, #instructions, #clear {
 	font-family: starNormal;
 	background-color: rgba(0, 0, 255, 0);
 	color: white;
 	border: 2px solid white;
-	font-size: x-large;
+	border-radius: 30px;
+	font-size: large;
+	padding-left: 2%;
+	padding-right: 2%;
 }
 
-#calculator:hover {
-	cursor: pointer;
-}
+#calculator:hover, #instructions:hover, #clear:hover { cursor: pointer; }
 
 #input {
 	display: flex;
 	flex-wrap: wrap;
+	width: 60%;
+	justify-content: space-between;
 }
 
 #title a {
 	font-family: starNormal;
 	color: white;
 	text-decoration: none;
-	font-size: xxx-large;
+	font-size: xx-large;
 }
 
-#clear a {
-	text-decoration: none;
-	color: white;
-}
+#stats { font-size: x-large; color: #ffd640; }
 
-#stats li {
-	list-style: hiragana-iroha;
-}
+#stats li { list-style: hiragana-iroha; }
+
+.paragraph { font-size: large; color: #e66a37; }
