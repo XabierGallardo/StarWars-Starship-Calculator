@@ -3,6 +3,10 @@ StarWars API Starship Calculator problem using JavaScript, ES6, AJAX and JSON :r
 
 https://swapi.dev/  
 
+<p align="center">
+	<img src="img/sampleSWStarships.png" alt="Sample image">
+</p>
+
 #### Problem to solve:
 
 We want to know for all SW starships, to cover a given distance, how many stops for resupply are required

@@ -49,3 +49,19 @@ body {
 #stats li { list-style: hiragana-iroha; }
 
 .paragraph { font-size: large; color: #e66a37; }
+
+
+/* Media queries */
+@media (max-width: 1700px) {
+	#input {
+		flex-direction: column;
+		width: 20%;
+	}
+
+	#distance { width: 94%; }
+}
+
+@media (max-width: 750px) {
+	#distance, #calculator, #instructions, #clear { font-size: small; }
+	#distance { width: 200px; }
+}
