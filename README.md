@@ -1,7 +1,7 @@
 # StarWars-Starship-Calculator
 StarWars API Starship Calculator problem using JavaScript, ES6, AJAX and JSON :rocket:
 
-https://swapi.dev/  
+https://swapi.dev/
 
 <p align="center">
 	<img src="img/sampleSWStarships.png" alt="Sample image">
